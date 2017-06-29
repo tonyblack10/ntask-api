@@ -1,0 +1,12 @@
+{
+  "name": "apidoc-ntask",
+  "description": "Documentação da NTask API",
+  "title": "NTask API - Documentação",
+  "header": {
+    "title": "NTask API - Documentação"
+  },
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}
