@@ -2,11 +2,11 @@ const Sequelize = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 
-const config = require('./config.js');
-
 let db = null;
 
 module.exports = app => {
+    const config = app.libs.config;
+    
     if(!db) {
         let sequelize = new Sequelize(
             config.database,

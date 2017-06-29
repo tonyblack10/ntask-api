@@ -6,7 +6,7 @@ const app = express();
 
 app.set('json spaces', 4);
 
-consign()
+consign({verbose: false})
     .include('libs/config.js')
     .then('libs/db.js')
     .then('libs/auth.js')
@@ -14,3 +14,5 @@ consign()
     .then('routes')
     .then('libs/boot.js')
     .into(app);
+
+module.exports = app;
