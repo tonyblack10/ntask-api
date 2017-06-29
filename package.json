@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run clusters",
+    "clusters": "node libs/clusters.js",
     "test": "NODE_ENV=test mocha test/**/*.js",
     "apidoc": "apidoc -i routes -o public/apidoc"
   },
@@ -13,13 +14,18 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
+    "compression": "^1.6.2",
     "consign": "^0.1.6",
+    "cors": "^2.8.3",
     "express": "^4.15.3",
+    "helmet": "^3.6.1",
     "jwt-simple": "^0.5.1",
+    "morgan": "^1.8.2",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "sequelize": "^4.2.0",
-    "sqlite3": "^3.1.8"
+    "sqlite3": "^3.1.8",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "apidoc": "^0.17.6",
