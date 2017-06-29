@@ -6,6 +6,7 @@ module.exports = app => {
 
     app.use(bodyParser.urlencoded({ extended: false }))
     app.use(bodyParser.json());
+    app.use(app.libs.auth.initialize());
 
     app.use((req, res, next) => {
         delete req.body.id;
