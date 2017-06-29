@@ -17,7 +17,7 @@ module.exports = app => {
                 .catch(error => res.status(412).json({msg: error.message}));
         });
 
-    app.route('tasks/:id')
+    app.route('/tasks/:id')
         .all(app.libs.auth.authenticate())
         .get((req, res) => {
             Tasks
@@ -39,7 +39,7 @@ module.exports = app => {
         })
         .delete((req, res) => {
             Tasks
-                .destroy(req.body, {where: {id: req.params.id, user_id: req.user.id} })
+                .destroy({where: {id: req.params.id, user_id: req.user.id} })
                 .then(result => res.sendStatus(204))
                 .catch(error => res.status(412).json({msg: error.message}));
         });
